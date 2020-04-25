@@ -17,14 +17,24 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @if(app('env')=='local')
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    @endif
+    @if(app('env')=='production')
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    @endif
 </head>
 <body>
 
     @yield('content')
 
     <!-- Scripts -->
+    @if(app('env')=='local')
     <script src="{{ asset('js/app.js') }}"></script>
+    @endif
+    @if(app('env')=='production')
+    <script src="{{ secure_asset('js/app.js') }}"></script>
+    @endif
 </div>
 </body>
 </html>
