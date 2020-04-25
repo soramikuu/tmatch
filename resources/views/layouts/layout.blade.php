@@ -18,7 +18,7 @@
 
     <!-- Styles -->
     @if(app('env')=='local')
-    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @endif
     @if(app('env')=='production')
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
@@ -35,6 +35,5 @@
     @if(app('env')=='production')
     <script src="{{ secure_asset('js/app.js') }}"></script>
     @endif
-</div>
 </body>
 </html>
